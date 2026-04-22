@@ -1,3 +1,28 @@
 body{
-    background-image: url(img/index-hero.svg);
+    background-image: url(img/background-img.svg);
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #ffbb00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+nav img {
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
 }
