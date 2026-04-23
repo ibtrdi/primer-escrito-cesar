@@ -98,7 +98,7 @@ section{
 }
 
 /* Botón principal amarillo */
-.hero-text a{
+.hero-text button{
     display: inline-block;
     color: #000000;
     background: #F9D011;
@@ -111,7 +111,7 @@ section{
     text-transform: uppercase;
     transition: all .55s ease;
 }
-.hero-text a:hover{
+.hero-text button:hover{
     background: linear-gradient(90deg, #F9D011, #F1531B);
     border: 1px solid white;
     transform: translateX(8px);
