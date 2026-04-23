@@ -1,0 +1,232 @@
+/* ========================================================
+   ESTILOS BASE (Generales para toda la página)
+   ======================================================== */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    list-style: none; /* Elimina viñetas por defecto en listas */
+    text-decoration: none; /* Elimina subrayado de enlaces */
+}
+body{
+    /* Fondo con gradiente radial azul */
+    background: #4BB8E9;
+    background: radial-gradient(at right bottom, #4BB8E9, #2350F6);                                          
+}
+
+/* ========================================================
+   CABECERA Y NAVEGACIÓN (Header)
+   ======================================================== */
+header{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 33px 9%;
+    background-color: transparent;
+}
+.logo{
+    height: 70px;
+    font-weight: 700;
+    color: white;
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+.navlist a:hover{
+    border-bottom: 2px solid white;
+}
+
+/* ========================================================
+   CONTENIDO PRINCIPAL (Estructura de grilla y contenedores)
+   ======================================================== */
+section{
+    padding: 0 19%;
+}
+.hero{
+    /* Usa CSS Grid para dividir en dos partes iguales (Izquierda y Derecha) */
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;                                
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ========================================================
+   TEXTOS Y LISTAS (Lado Izquierdo)
+   ======================================================== */
+.hero-text h1{
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+.hero-text p{
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+/* Lista numerada de curiosidades */
+.hero-text .curiosidades-lista{
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+.hero-text .curiosidades-lista li{
+    margin-bottom: 10px;
+    list-style: decimal;
+    list-style-position: inside; /* Los números quedan dentro del área de texto */
+}
+
+/* Botón principal amarillo */
+.hero-text a{
+    display: inline-block;
+    color: #000000;
+    background: #F9D011;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .55s ease;
+}
+.hero-text a:hover{
+    background: linear-gradient(90deg, #F9D011, #F1531B);
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+/* ========================================================
+   IMAGEN Y TABLAS DE DATOS (Lado Derecho)
+   ======================================================== */
+.hero-img img{
+    width: 700px;
+    height: auto;
+}
+
+.hero-tabla {
+    width: 100%;
+}
+.hero-tabla table {
+    width: 100%;
+    table-layout: fixed; /* Evita que la tabla supere el límite por palabras largas */
+    border-collapse: collapse;
+    color: white;
+    font-size: 14px;
+}
+.hero-tabla th, .hero-tabla td {
+    border: 1px solid white;
+    padding: 12px;
+    text-align: left;
+}
+.hero-tabla th {
+    font-weight: 600;
+}
+
+/* ========================================================
+   MEDIA QUERIES (Mejoras para pantallas chicas y Móviles)
+   ======================================================== */
+
+/* Adaptaciones para Tablets y Pantallas estrechas (hasta 1440px) */
+@media (max-width: 1440px) {
+    header {
+        position: absolute;
+        padding: 15px 5%;
+    }
+    section {
+        padding: 0 5%;
+    }
+    
+    /* El contenedor cambia de columnas a filas apliladas */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        padding-top: 120px;
+        height: auto;
+    }
+    .hero-text {
+        order: 1; /* El texto va primero */
+        margin-top: 20px;
+    }
+    .hero-img, .hero-tabla {
+        order: 2; /* Imagen o Tabla van segundo */
+        text-align: center;
+        width: 100%;
+    }
+    
+    .hero-text h1 {
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+    .hero-img img {
+        width: 90%;
+    }
+}
+
+/* Adaptaciones exclusivas para Celulares (hasta 990px) */
+@media (max-width: 990px) {
+    /* La cabecera apila el logo y la lista hacia abajo */
+    header {
+        flex-direction: column;
+        padding: 15px 3%;
+        position: relative;
+    }
+    
+    .navlist {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Mueve los links abajo si chocan */
+        justify-content: center;
+        padding: 15px 0 0 0; 
+        width: 100%;
+    }
+    .navlist a {
+        margin: 5px 10px;  
+        font-size: 14px; 
+    }
+
+    /* Redimensiones de lectura cómoda en móvil */
+    .hero-text {
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    .hero-text p, .hero-text .curiosidades-lista {
+        text-align: left; /* Mantenemos lectura alineada en textos largos */
+    }
+    
+    .hero-img img {
+        width: 100%;
+    }
+    
+    /* Adaptar la tabla comprimiendo paddings y letras en móvil */
+    .hero-tabla th, .hero-tabla td {
+        padding: 5px;
+        font-size: 11px;
+        word-wrap: break-word; /* Obliga a romper palabras gigantes para que quepan */
+        hyphens: auto;
+    }
+}
