@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: linear-gradient(135deg, #4BB8E9, #2350F6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 25px 9%;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 60px;
+}
+
+.navlist {
+    display: flex;
+    gap: 40px;
+}
+
+.navlist a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: all 0.4s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid;
+}
+
+section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 9%;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hero-img,
+.hero-tabla {
+    width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 80px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.hero-text .curiosidades-lista {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.hero-text .curiosidades-lista li {
+    margin-bottom: 12px;
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.hero-text button {
+    background: #F9D011;
+    color: #000000;
+    border: none;
+    padding: 14px 36px;
+    font-size: 14px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hero-text button:hover {
+    background: linear-gradient(90deg, #F9D011, #F1531B);
+    transform: translateX(8px);
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-tabla {
+    width: 100%;
+}
+
+.hero-tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.hero-tabla th,
+.hero-tabla td {
+    border: 1px solid #ffffff;
+    padding: 14px;
+    text-align: left;
+}
+
+.hero-tabla th {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.hero-tabla td {
+    color: #ffffff;
+}
+
+@media (max-width: 990px) {
+    header nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navlist {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navlist a {
+        margin: 5px 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-text,
+    .hero-img,
+    .hero-tabla {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text p,
+    .hero-text .curiosidades-lista {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-img img {
+        width: 100%;
+    }
+
+    .hero-tabla th,
+    .hero-tabla td {
+        padding: 8px;
+        font-size: 12px;
+        word-wrap: break-word;
+    }
+}
